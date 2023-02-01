@@ -1,0 +1,188 @@
+{% extends './base.html' %} 
+{% load static %}
+{% block title %}Home{% endblock %} 
+ 
+{% block content %}
+
+<main>
+
+  <section class="py-5 text-center container">
+
+    <div class="container">
+    
+      <div class="nav-scroller py-1 mb-3 ">
+        <nav class="nav d-flex justify-content-between ">
+          <a class="p-2 link-secondary" href="https://www.bbc.com/news/world" >World</a>
+          <a class="p-2 link-secondary" href="https://ronbpost.com/">Nepal</a>
+          <a class="p-2 link-secondary" href="https://www.technology.org/">New Technology</a>
+          <a class="p-2 link-secondary" href="https://freecoursesite.com/">Free Course</a>
+          <a class="p-2 link-secondary" href="https://www.linkedin.com/company/global-we-tech-cares/">Internship</a>
+          <a class="p-2 link-secondary" href="https://www.youtube.com/channel/UCzhz1JecArdYlHo2zu_2B3Q">Vlogs</a>
+        </nav>
+      </div>
+    </div>
+    
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">Divine World Embrace the change</h1>
+          <p class="lead my-3">Technology is constantly pushing the boundaries of what is possible, enabling us to solve some of the world's most pressing problems and improve our daily lives in ways we never thought possible</p>
+          <p class="lead mb-0"><a href="https://techcrunch.com/" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+      </div>
+    
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative tabb-1">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">Technology</strong>
+              <h3 class="mb-0">Keep Updated to Modern World</h3>
+              <a href="https://www.wired.com/"><p class="mb-0">Click here</p></a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+    
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative tabb-2">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Something New</strong>
+              <h3 class="mb-0">New inventions</h3>
+              <a href="https://www.digitaltrends.com/"><p class="mb-0">Click here</p></a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+    
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row g-5">
+        <div class="col-md-8">
+          
+            
+
+            <div class="hawa">
+              <h3>Tech Career</h3>
+              <p>Don't get left behind be a modern man.</p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Web Development</td>
+                    <td>3 months</td>
+                    <td>Rs.15000</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile App Development</td>
+                    <td>3 Months</td>
+                    <td>Rs. 15000</td>
+                  </tr>
+                  <tr>
+                    <td>Data Structure and Algorithm</td>
+                    <td>1 Month</td>
+                    <td>Rs. 10000</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>Fullstack Web Development</td>
+                    <td>6 Months</td>
+                    <td>Rs. 30000</td>
+                  </tr>
+                </tfoot>
+              </table>
+      
+              <p></p>
+
+            </div>
+
+           
+          </article>
+    
+          
+    
+        </div>
+    
+        <div class="col-md-4 sidexx">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0">Divine World is a company with a noble purpose of helping people by providing free goods and services to those in need.</p>
+            </div>
+    
+    
+            <div class="p-4">
+              <h4 class="fst-italic">Contact</h4>
+              <ol class="list-unstyled">
+                <li><a href="https://github.com/DipeshPaudel1999">GitHub</a></li>
+                <li><a href="https://www.youtube.com/channel/UCzhz1JecArdYlHo2zu_2B3Q">Youtube</a></li>
+                <li><a href="https://www.instagram.com/er_dipesh_paudel/">Instagram</a></li>
+                <li><a href="https://www.facebook.com/deepesh.paudel.7">Facebook</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </main>
+
+    <div class="row py-lg-3 wild-wise">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Wild, Wise & Free.</h1>
+        <p class="lead text-muted">New accessories and Secret items that are extremely useful in real world. These modern world products are meant to make you more efficient, productive and give you modern and smart look.</p>
+        <p>
+          <a href="https://dipeshpaudel1999.github.io/Startup_Website/" class="btn btn-primary my-2">Join Our Community</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="pb-3 h5">All Items</div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+
+        {% for product in products %}
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="img-fluid" src="{{ product.image.url }}" alt="Responsive image" >
+            <div class="card-body">
+              <p class="card-text">
+                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}"> {{ product.title }} </a>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">2 min read</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Future generation is here!</h1>
+        <p class="lead text-muted">If you're Modern man with modern mindset you can change the world.</p>
+        <p>
+          <a href="https://dipeshpaudel1999.github.io/Startup_Website/" class="btn btn-primary my-2">Join Our Community</a>
+          <a href="https://www.linkedin.com/in/dipesh-paudel-989bb7190/" class="btn btn-primary my-2">Contact Engineer Dipesh</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

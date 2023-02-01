@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Divine Store {% endblock %}</title>
+    <link rel="stylesheet" href=" {% static 'css/main.css' %} " />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      body{
+        background-color:rgb(4, 0, 24) ;
+        color: rgb(138, 138, 138);
+      }
+      .nav-scroller {
+        background-color: rgb(255, 214, 151);
+      }
+
+      .nav-scroller a{
+        text-decoration: none;
+        font-size: large;
+        color:rgb(3, 0, 34);
+        font-weight: 600;
+      }
+
+      .tabb-1{
+        background-color: rgb(28, 0, 20);
+      }
+      .tabb-2{
+        background-color: rgb(35, 0, 0);
+      }
+
+      .sidexx:hover{
+        box-shadow: 0 2px 5px 1px rgb(255, 213, 0);
+
+      }
+
+      .hawa{
+        background-color: rgb(1, 0, 15);
+      }
+      .hawa:hover{
+        box-shadow: 0 2px 3px 2px grey;
+      }
+
+      .wild-wise{
+        background-color: rgb(27, 27, 27) !important;
+      }
+
+      .bullet-rem{
+        text-align: left;
+      }
+      a{
+        text-decoration: none;
+        color: rgb(174, 174, 174);
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">DivineStore</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"></button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              {% comment %} <li class="nav-item active"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li> {% endcomment %}
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Library
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url "store:product_all" %}">All</a></li>
+
+                  {% for c in categories %}
+
+                  <li>
+                    <a class="dropdown-item text-dark text-decoration-none"
+                      href="{{ c.get_absolute_url }}">{{ c.name|title }} </a>
+                  </li>
+
+                  {% endfor %}
+
+                </ul>
+              </li>
+            </ul>
+
+            {% comment %} <form class="d-flex"><input class="form-control me-2" type="search" placeholder="Search"
+                aria-label="Search" />
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> {% endcomment %}
+            <a type="button" class="btn btn-primary" href="{% url 'cart:cart_summary' %}" role="button">
+              
+
+              {% with total_qty=cart|length %}
+                <div id="cart-qty" class="d-inline-flex">
+                  {% if total_qty > 0 %}
+                    {{ total_qty }}
+                  {% else %}
+                  0
+                  {% endif %}              
+                </div>
+              {% endwith %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              </svg>
+              Cart
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+
+
+    <div id="content">{% block content %}{% endblock content %}</div>
+
+
+  </body>
+
+</html>
